@@ -1,0 +1,48 @@
+<section class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div *ngFor="let fruit of fruits; let i = index;" class="list_fruit col">
+                    <form>
+                        <div class="image_fruit">
+                            <img src="{{fruit.image}}" />
+                        </div>
+                        <div class="name_fruit">
+                            {{fruit.nom}}
+                        </div>
+                        <div class="price_fruit">
+                            {{fruit.prixHT}} €
+                        </div>
+                        <div class="quantity_fruit">
+                            Quantité : {{fruit.quantite}}
+                        </div>
+                        <div class="button_fruit">
+                            <button type='button' (click)='addQuantityFruit(i)' class="add_fruit">+</button>
+                            <button type='button' (click)='removeQuantityFruit(i)' class="remove_fruit">-</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary add_cart">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="shopping_cart col-4">
+            <div>Panier</div>
+            <div class="cart_items row">
+                <div class="name_item col">Nom</div>
+                <div class="quantity_item col">Quantité</div>
+                <div class="price_item col">Prix</div>
+                <div class="remove_item col"></div>
+            </div>
+
+            <div class="total_items row">
+                <div class="total_quatity col">Qté : </div>
+                <div class="total_HT col">HT : </div>
+                <div class="total_TTC col">TTC : </div>
+                <div class="total_remove_items col"></div>
+            </div>
+        </div>
+    </div>
+</section>
